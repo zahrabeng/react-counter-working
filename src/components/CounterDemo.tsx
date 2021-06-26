@@ -4,7 +4,9 @@ function CounterDemo(): JSX.Element {
   const [counterValueFromCurrentRender, queueRerenderWithNewCounterValue] =
     useState(11);
 
-  const incrementCounter = () => {
+  console.log("Component is rendering with a counter value of", counterValueFromCurrentRender);
+
+  const incrementCounterByOne = () => {
     const nextRenderValue = counterValueFromCurrentRender + 1;
     console.log("current render value:", counterValueFromCurrentRender);
     queueRerenderWithNewCounterValue(nextRenderValue);
@@ -20,7 +22,7 @@ function CounterDemo(): JSX.Element {
     <>
       <h1>Counter Demo</h1>
       <p>Current value: {counterValueFromCurrentRender}</p>
-      <button onClick={incrementCounter}>+1 to value</button>
+      <button onClick={incrementCounterByOne}>+1 to value</button>
     </>
   );
 }
