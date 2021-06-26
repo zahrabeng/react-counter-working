@@ -1,19 +1,28 @@
+import { useState } from "react";
+
 function CounterDemo(): JSX.Element {
-  let counter = 11;
+  const [currentRenderCounterValue, queueRerenderWithNewCounterValue] =
+    useState(11);
 
   const incrementCounter = () => {
-    console.log('before incrementing, counter is', counter);
-    counter++;
-    console.log('after incrementing, counter is', counter);
-  }
+    const nextRenderValue = currentRenderCounterValue + 1;
+    console.log("current render value:", currentRenderCounterValue);
+    queueRerenderWithNewCounterValue(nextRenderValue);
+    console.log(
+      "queued a rerender with value of",
+      nextRenderValue,
+      "... although current render value is still",
+      currentRenderCounterValue
+    );
+  };
 
   return (
     <>
       <h1>Counter Demo</h1>
-      <p>Current value: {counter}</p>
+      <p>Current value: {currentRenderCounterValue}</p>
       <button onClick={incrementCounter}>+1 to value</button>
     </>
-  )
+  );
 }
 
-export default CounterDemo
+export default CounterDemo;

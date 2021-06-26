@@ -1,9 +1,7 @@
 import CounterDemo from "./components/CounterDemo";
 
 function App(): JSX.Element {
-  return (
-    <CounterDemo />
-  );
+  return <CounterDemo />;
 }
 
 export default App;
