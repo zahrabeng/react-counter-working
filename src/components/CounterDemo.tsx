@@ -9,12 +9,16 @@ function CounterDemo(): JSX.Element {
   };
 
   const handleReset = () => {
-    queueRerenderWithNewCounterValue(0)
-  }
+    queueRerenderWithNewCounterValue(0);
+  };
 
   const handleAddFive = () => {
-    queueRerenderWithNewCounterValue(counterValueFromCurrentRender + 5)
-  }
+    queueRerenderWithNewCounterValue(counterValueFromCurrentRender + 5);
+  };
+
+  const handleMinusFive = () =>{
+    queueRerenderWithNewCounterValue(counterValueFromCurrentRender - 5);
+  };
 
 
 
@@ -27,6 +31,8 @@ function CounterDemo(): JSX.Element {
       <button onClick={handleReset}>Reset counter</button>
       <hr/>
       <button onClick={handleAddFive}>+5</button>
+      <hr/>
+      <button onClick={handleMinusFive}>-5</button>
     </>
   );
 }
