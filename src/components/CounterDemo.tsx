@@ -20,6 +20,10 @@ function CounterDemo(): JSX.Element {
     queueRerenderWithNewCounterValue(counterValueFromCurrentRender - 5);
   };
 
+  const handleMinusOne = () =>{
+    queueRerenderWithNewCounterValue(counterValueFromCurrentRender -1)
+  }
+
 
 
   return (
@@ -33,6 +37,8 @@ function CounterDemo(): JSX.Element {
       <button onClick={handleAddFive}>+5</button>
       <hr/>
       <button onClick={handleMinusFive}>-5</button>
+      <hr/>
+      <button onClick = {handleMinusOne}>-1</button>
     </>
   );
 }
